@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "001 Corestart", "corestart\001 Corestart.csproj", "{F168676D-4BA7-4811-A0E4-DFA525578201}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "002 配置框架", "配置框架\002 配置框架.csproj", "{0F371316-BDAC-4EF9-AC66-D12951566908}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "003 中间件", "003-中间件\003 中间件.csproj", "{69BE2CDE-CBF2-439C-AE2F-3B50D6587907}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F168676D-4BA7-4811-A0E4-DFA525578201}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F168676D-4BA7-4811-A0E4-DFA525578201}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F168676D-4BA7-4811-A0E4-DFA525578201}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F168676D-4BA7-4811-A0E4-DFA525578201}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F371316-BDAC-4EF9-AC66-D12951566908}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F371316-BDAC-4EF9-AC66-D12951566908}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F371316-BDAC-4EF9-AC66-D12951566908}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F371316-BDAC-4EF9-AC66-D12951566908}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69BE2CDE-CBF2-439C-AE2F-3B50D6587907}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69BE2CDE-CBF2-439C-AE2F-3B50D6587907}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69BE2CDE-CBF2-439C-AE2F-3B50D6587907}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69BE2CDE-CBF2-439C-AE2F-3B50D6587907}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BEE8C3EF-5DD3-4290-8ABA-12BECC1180FF}
+	EndGlobalSection
+EndGlobal
