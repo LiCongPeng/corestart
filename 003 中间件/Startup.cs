@@ -382,7 +382,7 @@ namespace _003_中间件
 
             //if (env.IsDevelopment())
             //{
-            //    app.UseDeveloperExceptionPage();
+            app.UseDeveloperExceptionPage();
             //}
             //else
             //{
@@ -392,7 +392,7 @@ namespace _003_中间件
             //}
 
             //app.UseHttpsRedirection();
-            //app.UseStaticFiles();
+            app.UseStaticFiles();
 
             //app.UseRouting();
 
