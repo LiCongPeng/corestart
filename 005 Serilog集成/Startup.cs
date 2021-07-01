@@ -49,19 +49,19 @@ namespace _005_Serilog集成
             app.UseSerilogRequestLogging();
 
             // 3.配置消息模板 
-            //app.UseSerilogRequestLogging(options =>
-            //{
-            //    // 自定义消息模板
-            //    options.MessageTemplate = "Handled {RequestPath}";
-            //    // 发出调试级别的事件，而不是默认事件
-            //    options.GetLevel = (httpContext, elapsed, ex) => LogEventLevel.Debug;
-            //    //将其他属性附加到请求完成事件
-            //    options.EnrichDiagnosticContext = (diagnosticContext, httpContext) =>
-            //    {
-            //        diagnosticContext.Set("RequestHost", httpContext.Request.Host.Value);
-            //        diagnosticContext.Set("RequestScheme", httpContext.Request.Scheme);
-            //    };
-            //});
+            app.UseSerilogRequestLogging(options =>
+            {
+                // 自定义消息模板
+                options.MessageTemplate = "Handled {RequestPath}";
+                // 发出调试级别的事件，而不是默认事件
+                options.GetLevel = (httpContext, elapsed, ex) => LogEventLevel.Debug;
+                //将其他属性附加到请求完成事件
+                options.EnrichDiagnosticContext = (diagnosticContext, httpContext) =>
+                {
+                    diagnosticContext.Set("RequestHost", httpContext.Request.Host.Value);
+                    diagnosticContext.Set("RequestScheme", httpContext.Request.Scheme);
+                };
+            });
 
             app.UseRouting();
 

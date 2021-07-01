@@ -27,12 +27,12 @@ namespace _004_日志框架
         {
             services.AddRazorPages();
 
-            // 只使用当前扩展的日志方式
-            //services.AddLogging(config =>
-            //{
-            //    config.ClearProviders();
-            //    config.AddProvider(new ExtensionsLoggerProvider(new ExtensionsConfiguration { LogLevel = LogLevel.Information }));
-            //});
+            //只使用当前扩展的日志方式
+            services.AddLogging(config =>
+            {
+                config.ClearProviders();
+                config.AddProvider(new ExtensionsLoggerProvider(new ExtensionsConfiguration { LogLevel = LogLevel.Information }));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

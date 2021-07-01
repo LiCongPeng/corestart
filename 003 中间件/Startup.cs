@@ -40,31 +40,31 @@ namespace _003_中间件
 
             #region 默认中间件
 
-            //if (env.IsDevelopment())
-            //{
-            //    app.UseDeveloperExceptionPage();
-            //}
-            //else
-            //{
-            //    app.UseExceptionHandler("/Error");
-            //    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-            //    app.UseHsts();
-            //}
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                app.UseExceptionHandler("/Error");
+                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+                app.UseHsts();
+            }
 
-            //app.UseHttpsRedirection();
-            //app.UseStaticFiles();
+            app.UseHttpsRedirection();
+            app.UseStaticFiles();
 
-            //app.UseRouting();
+            app.UseRouting();
 
-            //app.UseAuthorization();
+            app.UseAuthorization();
 
-            //app.UseEndpoints(endpoints =>
-            //{
-            //    //endpoints.MapRazorPages();
-            //    endpoints.MapControllerRoute(
-            //        name: "default",
-            //        pattern: "{controller=Home}/{action=Index}/{id?}");
-            //});
+            app.UseEndpoints(endpoints =>
+            {
+                //endpoints.MapRazorPages();
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
+            });
 
             #endregion
 
@@ -203,7 +203,7 @@ namespace _003_中间件
             //});
 
             //// 同时匹配多个段
-            //app.Map("/Map4/Map5", app4 =>
+            //app.Map("/Map1/Map5", app4 =>
             //{
             //    app4.Run(async context =>
             //    {
@@ -254,16 +254,16 @@ namespace _003_中间件
 
             #region 中间件源码解析
 
-            //// 原始注册内容
-            ///* Use 方法
-            //private readonly IList<Func<RequestDelegate, RequestDelegate>> _components = new List<Func<RequestDelegate, RequestDelegate>>();
+            // 原始注册内容
+            /* Use 方法
+            private readonly IList<Func<RequestDelegate, RequestDelegate>> _components = new List<Func<RequestDelegate, RequestDelegate>>();
 
-            //public IApplicationBuilder Use(Func<RequestDelegate, RequestDelegate> middleware)
-            //{
-            //    _components.Add(middleware);
-            //    return this;
-            //}
-            //*/
+            public IApplicationBuilder Use(Func<RequestDelegate, RequestDelegate> middleware)
+            {
+                _components.Add(middleware);
+                return this;
+            }
+            */
 
             //app.Use(next =>
             //{

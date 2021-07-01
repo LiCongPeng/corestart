@@ -14,17 +14,17 @@ namespace _004_日志框架
     public class Program
     {
         #region 日志配置
-        //public static void Main(string[] args)
-        //{
-        //    CreateHostBuilder(args).Build().Run();
-        //}
+        public static void Main(string[] args)
+        {
+            CreateHostBuilder(args).Build().Run();
+        }
 
-        //public static IHostBuilder CreateHostBuilder(string[] args) =>
-        //    Host.CreateDefaultBuilder(args)
-        //        .ConfigureWebHostDefaults(webBuilder =>
-        //        {
-        //            webBuilder.UseStartup<Startup>();
-        //        }); 
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
+                    webBuilder.UseStartup<Startup>();
+                });
         #endregion
 
         #region 日志作用域

@@ -14,38 +14,38 @@ namespace _005_Serilog集成
 {
     public class Program
     {
-        //2、读取配置文件
-        public static IConfiguration Configuration { get; } = new ConfigurationBuilder()
-           .SetBasePath(Directory.GetCurrentDirectory())
-           .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-           .AddJsonFile($"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Production"}.json", optional: true)
-           .AddEnvironmentVariables()
-           .Build();
+        ////2、读取配置文件
+        //public static IConfiguration Configuration { get; } = new ConfigurationBuilder()
+        //   .SetBasePath(Directory.GetCurrentDirectory())
+        //   .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+        //   .AddJsonFile($"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Production"}.json", optional: true)
+        //   .AddEnvironmentVariables()
+        //   .Build();
 
         public static void Main(string[] args)
         {
-            // // 1 直接设置输出界别和输出方式
-            // Log.Logger = new LoggerConfiguration()
-            //.MinimumLevel.Debug()
-            //.MinimumLevel.Override("Microsoft", LogEventLevel.Information)
-            //.Enrich.FromLogContext()
-            //.WriteTo.Console()
-            //.CreateLogger();
-
-            //2、读取配置文件
+            // 1 直接设置输出界别和输出方式
             Log.Logger = new LoggerConfiguration()
-                         .ReadFrom.Configuration(Configuration)
-                         .Enrich.FromLogContext()
-                         .WriteTo.Debug()   //输出路径
-                         .WriteTo.Console( //模板
-                         outputTemplate: @"
-Timestamp:{Timestamp:HH:mm:ss} 
-Level:{Level:u5}
-Message:{Message:lj} 
-Properties:{Properties:j}
-Exception:{Exception}
-")    
-                         .CreateLogger();
+           .MinimumLevel.Debug()
+           .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
+           .Enrich.FromLogContext()
+           .WriteTo.Console()
+           .CreateLogger();
+
+            //            //2、读取配置文件
+            //            Log.Logger = new LoggerConfiguration()
+            //                         .ReadFrom.Configuration(Configuration)
+            //                         .Enrich.FromLogContext()
+            //                         .WriteTo.Debug()   //输出路径
+            //                         .WriteTo.Console( //模板
+            //                         outputTemplate: @"
+            //Timestamp:{Timestamp:HH:mm:ss} 
+            //Level:{Level:u5}
+            //Message:{Message:lj} 
+            //Properties:{Properties:j}
+            //Exception:{Exception}
+            //")    
+            //                         .CreateLogger();
 
             try
             {
