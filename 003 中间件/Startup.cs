@@ -30,6 +30,7 @@ namespace _003_中间件
             services.AddRazorPages();
             services.AddSingleton(new StringContentMiddleware());
             services.AddSingleton(new RefusalMiddleware());
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
